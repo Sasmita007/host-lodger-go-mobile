@@ -17,6 +17,7 @@ import { ChatScreen } from '@/components/screens/ChatScreen';
 import { NotificationsScreen } from '@/components/screens/NotificationsScreen';
 import { SettingsScreen } from '@/components/screens/SettingsScreen';
 import { ResourcesScreen } from '@/components/screens/ResourcesScreen';
+import { AgreementScreen } from '@/components/screens/AgreementScreen';
 
 function AppContent() {
   const { currentScreen } = useApp();
@@ -57,6 +58,8 @@ function AppContent() {
         return <SettingsScreen />;
       case 'resources':
         return <ResourcesScreen />;
+      case 'agreement':
+        return <AgreementScreen />;
       default:
         return <SplashScreen />;
     }

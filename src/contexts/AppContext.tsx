@@ -18,7 +18,8 @@ type AppScreen =
   | 'chat'
   | 'notifications'
   | 'settings'
-  | 'resources';
+  | 'resources'
+  | 'agreement';
 
 interface AppContextType {
   currentScreen: AppScreen;

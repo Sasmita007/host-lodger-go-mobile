@@ -3,7 +3,7 @@ import { useApp } from '@/contexts/AppContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { MobileLayout } from '@/components/layout/MobileLayout';
-import { ArrowLeft, Shield, Send, Flag, MoreVertical, Phone, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Shield, Send, Flag, Handshake } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 
@@ -84,11 +84,22 @@ export function ChatScreen() {
       </div>
 
       {/* Safety Banner */}
-      <div className="px-4 py-2 bg-accent/50 flex items-center gap-2 text-xs">
-        <Shield className="w-3.5 h-3.5 text-primary" />
-        <span className="text-muted-foreground">
-          In-app only • Phone numbers hidden until agreement
-        </span>
+      <div className="px-4 py-2 bg-accent/50 flex items-center justify-between gap-2 text-xs">
+        <div className="flex items-center gap-2">
+          <Shield className="w-3.5 h-3.5 text-primary" />
+          <span className="text-muted-foreground">
+            In-app only • Phone numbers hidden until agreement
+          </span>
+        </div>
+        <Button
+          size="sm"
+          variant="default"
+          onClick={() => setCurrentScreen('agreement')}
+          className="h-7 text-xs gap-1.5"
+        >
+          <Handshake className="w-3.5 h-3.5" />
+          Mutual Agreement
+        </Button>
       </div>
 
       {/* Messages */}
